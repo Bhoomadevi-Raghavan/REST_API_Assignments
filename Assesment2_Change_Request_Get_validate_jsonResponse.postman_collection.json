@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "61bf6b39-ef6a-4195-9367-08e095e7b8e1",
+		"name": "Assesment2_Change_Request_Get_validate_jsonResponse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37649912"
+	},
+	"item": [
+		{
+			"name": "Get_alldata_change_request_validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validating created by field for record 1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.result[0].sys_created_by).to.eql(\"admin\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validating Number of record 2\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.result[1].number).to.eql(\"CHG0000003\");\r",
+							"});\r",
+							"pm.test(\"Validating short description of record 3\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.result[2].short_description).to.eql(\"Add network switch to cabinet\");\r",
+							"});\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							" });\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{userName}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}{{hostName}}{{baseUrl}}/:tableName",
+					"host": [
+						"{{protocol}}{{hostName}}{{baseUrl}}"
+					],
+					"path": [
+						":tableName"
+					],
+					"variable": [
+						{
+							"key": "tableName",
+							"value": "change_request"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "protocol",
+			"value": "https://",
+			"type": "string"
+		},
+		{
+			"key": "hostName",
+			"value": "dev246491.service-now.com/",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "api/now/table",
+			"type": "string"
+		},
+		{
+			"key": "userName",
+			"value": "admin",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

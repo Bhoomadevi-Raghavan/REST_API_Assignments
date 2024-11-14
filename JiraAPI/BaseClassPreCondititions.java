@@ -12,8 +12,7 @@ import io.restassured.specification.ResponseSpecification;
 
 public class BaseClassPreCondititions {
 	
-	protected String issueKey;
-	protected String id;
+	
 	@BeforeMethod
 	public void initialSetUp() {
 		

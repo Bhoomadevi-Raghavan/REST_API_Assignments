@@ -20,7 +20,7 @@ public class EndToEndIssueJira extends BaseClassPreCondititions {
 		
 	 Response post = given()
 			 .auth()
-			 .preemptive().basic("bhooms.balaji@gmail.com","ATATT3xFfGF0-Z_QVRLUZfT4TisMiJTdrSLBChnSbQu6NbVyugCyOU91gf9O03--0DOr85nhaYMBGFu0q2lyIlDNsE6O1mT1yD5VzPm-f_6P3UEZtZ6iohGHD2WUVUrKgk-I2dl-Z8jmvMY2vpqsXVCKjZLd-M4j2--KqEFKbkBjZF7DGVjjsWA=E0CBEAB3")
+			 .preemptive().basic("username","apiToken")
 			.header("Content-Type","application/json")
 			.log().all()
 		.when()	
@@ -39,7 +39,7 @@ public class EndToEndIssueJira extends BaseClassPreCondititions {
 		
 		given()
 		 .auth()
-		 .preemptive().basic("bhooms.balaji@gmail.com","ATATT3xFfGF0-Z_QVRLUZfT4TisMiJTdrSLBChnSbQu6NbVyugCyOU91gf9O03--0DOr85nhaYMBGFu0q2lyIlDNsE6O1mT1yD5VzPm-f_6P3UEZtZ6iohGHD2WUVUrKgk-I2dl-Z8jmvMY2vpqsXVCKjZLd-M4j2--KqEFKbkBjZF7DGVjjsWA=E0CBEAB3")
+		 .preemptive().basic("userName","apiToken")
 		 .pathParam("issueKey",issueKey)
 			.log().all()
 		.when()
@@ -55,7 +55,7 @@ public class EndToEndIssueJira extends BaseClassPreCondititions {
 		File file = new File("src/test/resources/JiraInput/UpdateIssue.json");
 		given()
 		 .auth()
-		 .preemptive().basic("bhooms.balaji@gmail.com","ATATT3xFfGF0-Z_QVRLUZfT4TisMiJTdrSLBChnSbQu6NbVyugCyOU91gf9O03--0DOr85nhaYMBGFu0q2lyIlDNsE6O1mT1yD5VzPm-f_6P3UEZtZ6iohGHD2WUVUrKgk-I2dl-Z8jmvMY2vpqsXVCKjZLd-M4j2--KqEFKbkBjZF7DGVjjsWA=E0CBEAB3")
+		 .preemptive().basic("userName","apiToken")
 		.header("Content-Type","application/json")
 		.pathParam("issueKey", issueKey)
 		.log().all()
@@ -70,7 +70,7 @@ public class EndToEndIssueJira extends BaseClassPreCondititions {
 	public void runDelete() {
 		given()
 		 	.auth()
-		 	.preemptive().basic("bhooms.balaji@gmail.com","ATATT3xFfGF0-Z_QVRLUZfT4TisMiJTdrSLBChnSbQu6NbVyugCyOU91gf9O03--0DOr85nhaYMBGFu0q2lyIlDNsE6O1mT1yD5VzPm-f_6P3UEZtZ6iohGHD2WUVUrKgk-I2dl-Z8jmvMY2vpqsXVCKjZLd-M4j2--KqEFKbkBjZF7DGVjjsWA=E0CBEAB3")
+		 	.preemptive().basic("userName","apiToken")
 		 	.pathParam("issueKey", issueKey)
 		 	.log().all()
 		 .when()

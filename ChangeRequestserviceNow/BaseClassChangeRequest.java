@@ -17,9 +17,9 @@ public class BaseClassChangeRequest {
 	@BeforeMethod
 	
 	public void uriAuthSetUp() {
-		baseURI = "https://dev246491.service-now.com/";
+		baseURI = "serviveNowUrl";
 		basePath = "api/now/table";
-		authentication = basic("admin",	"zw0TK=zk%VL8");
+		authentication = basic("admin",	"password");
 
 	}
 	public ResponseSpecification CreateRecord() {

@@ -17,7 +17,7 @@ public class BaseClassPreCondititions {
 	@BeforeMethod
 	public void initialSetUp() {
 		
-		baseURI = "https://bhoomsbalaji.atlassian.net/";
+		baseURI = "https://user.atlassian.net/";
 		basePath="rest/api/3/issue";
 				
 	}
